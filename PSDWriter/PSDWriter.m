@@ -93,12 +93,12 @@ char *blendModes[36] =
     if (screenRegion.origin.y + screenRegion.size.height > documentSize.height)
         imageRegion.size.height = screenRegion.size.height = documentSize.height - screenRegion.origin.y;
     if (screenRegion.origin.x < 0) {
-        imageRegion.origin.x = abs(screenRegion.origin.x);
+        imageRegion.origin.x = fabs(screenRegion.origin.x);
         screenRegion.origin.x = 0;
         screenRegion.size.width = imageRegion.size.width = imageRegion.size.width - imageRegion.origin.x;
     }
     if (screenRegion.origin.y < 0) {
-        imageRegion.origin.y = abs(screenRegion.origin.y);
+        imageRegion.origin.y = fabs(screenRegion.origin.y);
         screenRegion.origin.y = 0;
         screenRegion.size.height = imageRegion.size.height = imageRegion.size.height - imageRegion.origin.y;
     }
