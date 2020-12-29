@@ -74,23 +74,13 @@ char *blendModes[36] =
     }
     return self;
 }
-- (void)addLayerWithCGImage:(CGImageRef)image
-                    andName:(NSString*)name
-                 andOpacity:(float)opacity
-                  andOffset:(CGPoint)offset
-{
-    [self addLayerWithCGImage:(CGImageRef)image
-                      andName:(NSString*)name
-                   andOpacity:(float)opacity
-                    andOffset:(CGPoint)offset
-                 andBlendMode: kPSDBlendModeNormal];
-    
-}
+
 - (void)addLayerWithCGImage:(CGImageRef)image
                     andName:(NSString*)name
                  andOpacity:(float)opacity
                   andOffset:(CGPoint)offset
                andBlendMode: (NSInteger) blendMode
+                  isVisible:(bool)isVisible
 {
     PSDLayer * l = [[[PSDLayer alloc] init] autorelease];
     
@@ -117,7 +107,8 @@ char *blendModes[36] =
     [l setOpacity: opacity];
     [l setRect: screenRegion];
     [l setName: name];  // 0 - 15 char kept currently (padded with spaces)
-    [l setBlendMode:blendMode]; // Normal = 0.
+    [l setBlendMode: blendMode]; // Normal = 0.
+    [l setIsVisible: isVisible];
     
     [layers addObject: l];
 
@@ -602,14 +593,18 @@ char *blendModes[36] =
 		// print out  Clipping: 0 = base, 1 = non-base
 		[layerInfo appendValue:0 withLength:1];
 
-		// print out flags. I think we're making the layer invisible
+		// print out flags
         // Flags:
         //  bit 0 = transparency protected;
-        //  bit 1 = visible; bit 2 = obsolete;
+        //  bit 1 = invisible; bit 2 = obsolete;
         //  bit 3 = 1 for Photoshop 5.0 and later, tells if bit 4 has useful information;
         //  bit 4 = pixel data irrelevant to appearance of document
 
-		[layerInfo appendValue:1 withLength:1]; // Flags
+        if ([aLayer isVisible]) {
+            [layerInfo appendValue:0 withLength:1]; // Flags
+        } else {
+            [layerInfo appendValue:2 withLength:1]; // Flags
+        }
 		[layerInfo appendValue:0 withLength:1]; // filler 0
 
 		// print out extra data length ( = the total length of the next five fields).

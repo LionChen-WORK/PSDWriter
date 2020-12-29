@@ -19,6 +19,7 @@
     float opacity;
     CGRect rect;
     NSInteger blendMode;
+    bool isVisible;
 }
 
 /** The name of the layer. I believe this must be 16 characters or less. 
@@ -44,5 +45,7 @@
     Note that scaling is not currently supported, so you should really only adjust the origin of this rect to move the imageData around within the PSD. 
 */
 @property (nonatomic, assign) CGRect rect;
+
+@property (nonatomic, assign) bool isVisible;
 
 @end
