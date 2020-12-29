@@ -224,7 +224,7 @@ char *blendModes[36] =
     [effectInfo appendBytes:&signature8BIM length:4];
     [effectInfo appendBytes:&effectKey length:4];
     effectLenght = effectLenght + (effectLenght % 2);   // round up to even
-    [effectInfo appendBytes:effectLenght length:4];
+    [effectInfo appendBytes:&effectLenght length:4];
 
     // add Effect header
     [effectInfo appendValue:0 withLength:2];    // verison 0
