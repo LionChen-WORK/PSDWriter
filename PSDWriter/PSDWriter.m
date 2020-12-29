@@ -296,6 +296,7 @@ char *blendModes[36] =
     [effectInfo appendValue:75 withLength:1];    // Opacity as a percent
     }
 
+    return effectInfo;
 }
 
 - (NSData *)createPSDData
