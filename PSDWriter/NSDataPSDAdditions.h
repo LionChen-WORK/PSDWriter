@@ -17,8 +17,8 @@ For example, we could say [data appendValue: 2 withLength: 5], and 00002 would b
 into the data object. Very useful for writing to file formats that have header structures
 that require a certain number of bytes be used for a certain value. i.e. PSD and TIFF 
 
-@param value: The value to append
-@param length: The number of bytes that should be used to store the value. The value will be padded
+ @param value The value to append
+ @param length The number of bytes that should be used to store the value. The value will be padded
 to length bytes regardless of the number of bytes required to store it.
 */
 - (void)appendValue:(long)value withLength:(int)length;
@@ -41,9 +41,9 @@ skip 4, etc... to compress the data with very minimal memory footprint.
 
 For normal packbits just to skip = 1 
 
-@param range: The range within the data object that should be encoded. Useful
+ @param range The range within the data object that should be encoded. Useful
 for specifying a non-zero starting offset to get a certain channel encoded.
-@param skip: The number of bytes to advance as the data is encoded. Skip = 1 will
+ @param skip The number of bytes to advance as the data is encoded. Skip = 1 will
 encode every byte, skip = 4 will encode every fourth byte, and so on.
 */
 - (NSData *)packedBitsForRange:(NSRange)range skip:(int)skip;
