@@ -10,36 +10,22 @@
 #import "NSDataPSDAdditions.h"
 #import "PSDLayer.h"
 
- char signature8BIM[4] = {'8','B','I','M'};
+const char signature8BIM[4] = {'8','B','I','M'};
 
 // Blend mode key: 'pass' = pass through,
 // 'norm' = normal, 'diss' = dissolve, 'dark' = darken, 'mul ' = multiply,
-char blendModeNormKey[4] = {'n','o','r','m'};
-char blendModeDissKey[4] = {'d','i','s','s'};
-char blendModeDarkKey[4] = {'d','a','r','k'};
-char blendModeMulKey[4] = {'m','u','l',' '};
 // 'idiv' = color burn, 'lbrn' = linear burn, 'dkCl' = darker color, 'lite' = lighten,
-char blendModeIdivKey[4] = {'i','d','i','v'};
-char blendModeLbrnKey[4] = {'l','b','r','n'};
-char blendModeDkclKey[4] = {'d','k','C','l'};
-char blendModeLiteKey[4] = {'l','i','t','e'};
-
 // 'scrn' = screen, 'div ' = color dodge, 'lddg' = linear dodge, 'lgCl' = lighter
-char blendModeScrnKey[4] = {'s','c','r','n'};
-char blendModeDivKey[4] = {'d','i','v',' '};
-char blendModeLddgKey[4] = {'l','d','d','g'};
-char blendModeLgClKey[4] = {'l','g','C','l'};
 // color, 'over' = overlay, 'sLit' = soft light, 'hLit' = hard light, 'vLit' = vivid light,
 // 'lLit' = linear light, 'pLit' = pin light, 'hMix' = hard mix, 'diff' = difference,
 // 'smud' = exclusion, 'fsub' = subtract, 'fdiv' = divide,
 // 'hue ' = hue, 'sat ' = saturation, 'colr' = color, 'lum ' = luminosity,
-char blendModeHueKey[4] = {'h','u','e',' '};
-char blendModeSatKey[4] = {'s','a','t',' '};
-char blendModeColKey[4] = {'c','o','l','r'};
-char blendModeLumKey[4] = {'l','u','m',' '};
-char *blendModes[36] =
-{ &blendModeNormKey, &blendModeDissKey, &blendModeDarkKey, &blendModeMulKey,
-    0 };
+const char *blendModes[4] = {
+    "norm",
+    "diss",
+    "dark",
+    "mul ",
+};
 
 
 @implementation PSDWriter
