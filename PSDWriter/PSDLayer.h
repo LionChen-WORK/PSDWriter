@@ -12,13 +12,20 @@
 #import <UIKit/UIKit.h>
 #endif
 
+typedef NS_ENUM(NSInteger, PSDBlendModes) {
+    kPSDBlendModeNormal = 0,
+    kPSDBlendModeDissolve = 1,
+    kPSDBlendModeDarken = 2,
+    kPSDBlendModeMultiply = 3,
+};
+
 @interface PSDLayer : NSObject
 {
     NSString * name;
     NSData * imageData;
     float opacity;
     CGRect rect;
-    NSInteger blendMode;
+    PSDBlendModes blendMode;
     bool isVisible;
 }
 
@@ -34,12 +41,7 @@
 /** The opacity of the layer between 0 and 1. */
 @property (nonatomic, assign) float opacity;
 
-/** The blend modes */
- enum PSDBlendModes {
- kPSDBlendModeNormal=0, kPSDBlendModeDisolve, kPSDBlendModeDarken, kPSDBlendModeMultiply
- };
- 
-@property (nonatomic, assign) NSInteger blendMode;
+@property (nonatomic, assign) PSDBlendModes blendMode;
 
 /** The rectangle the layer should be placed within in the PSD. 
     Note that scaling is not currently supported, so you should really only adjust the origin of this rect to move the imageData around within the PSD. 

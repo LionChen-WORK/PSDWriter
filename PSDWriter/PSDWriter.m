@@ -66,7 +66,7 @@ const char *blendModes[4] = {
                     andName:(NSString*)name
                  andOpacity:(float)opacity
                   andOffset:(CGPoint)offset
-               andBlendMode: (NSInteger) blendMode
+               andBlendMode: (PSDBlendModes) blendMode
                   isVisible:(bool)isVisible
 {
     PSDLayer * l = [[[PSDLayer alloc] init] autorelease];

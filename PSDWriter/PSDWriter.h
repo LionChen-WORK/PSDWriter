@@ -11,6 +11,8 @@
 #import <UIKit/UIKit.h>
 #endif
 
+#import "PSDLayer.h"
+
 @interface PSDWriter : NSObject
 {
 	CGSize documentSize;
@@ -78,7 +80,7 @@ Note: Having layers partially off the edge of the canvas is not currently suppor
                     andName:(NSString*)name
                  andOpacity:(float)opacity
                   andOffset:(CGPoint)offset
-               andBlendMode: (NSInteger) blendMode
+               andBlendMode: (PSDBlendModes) blendMode
                   isVisible: (bool) isVisible;
 
 /* Generates an NSData object representing a PSD image with the width and height specified by documentSize
