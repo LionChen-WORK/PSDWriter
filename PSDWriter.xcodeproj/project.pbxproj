@@ -10,6 +10,7 @@
 		7C7BC6F2259B110D007D4CC4 /* PSDWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7BC6ED259B110D007D4CC4 /* PSDWriter.m */; };
 		7C7BC6F3259B110D007D4CC4 /* PSDLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7BC6EE259B110D007D4CC4 /* PSDLayer.m */; };
 		7C7BC6F4259B110D007D4CC4 /* NSDataPSDAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7BC6EF259B110D007D4CC4 /* NSDataPSDAdditions.m */; };
+		7CEDE4C1259C48DD0052EE32 /* PSDWriterUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CEDE4C0259C48DD0052EE32 /* PSDWriterUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,6 +33,8 @@
 		7C7BC6EF259B110D007D4CC4 /* NSDataPSDAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataPSDAdditions.m; sourceTree = "<group>"; };
 		7C7BC6F0259B110D007D4CC4 /* NSDataPSDAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataPSDAdditions.h; sourceTree = "<group>"; };
 		7C7BC6F1259B110D007D4CC4 /* PSDLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSDLayer.h; sourceTree = "<group>"; };
+		7CEDE4BF259C48C60052EE32 /* PSDWriterUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSDWriterUtils.h; sourceTree = "<group>"; };
+		7CEDE4C0259C48DD0052EE32 /* PSDWriterUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSDWriterUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +73,8 @@
 				7C7BC6EE259B110D007D4CC4 /* PSDLayer.m */,
 				7C7BC6EC259B110D007D4CC4 /* PSDWriter.h */,
 				7C7BC6ED259B110D007D4CC4 /* PSDWriter.m */,
+				7CEDE4BF259C48C60052EE32 /* PSDWriterUtils.h */,
+				7CEDE4C0259C48DD0052EE32 /* PSDWriterUtils.m */,
 			);
 			path = PSDWriter;
 			sourceTree = "<group>";
@@ -130,6 +135,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CEDE4C1259C48DD0052EE32 /* PSDWriterUtils.m in Sources */,
 				7C7BC6F4259B110D007D4CC4 /* NSDataPSDAdditions.m in Sources */,
 				7C7BC6F2259B110D007D4CC4 /* PSDWriter.m in Sources */,
 				7C7BC6F3259B110D007D4CC4 /* PSDLayer.m in Sources */,
